@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+import { ArrowDownIcon, MagnifyingGlassIcon } from "@radix-ui/react-icons";
+
+import "./App.css";
+
+import EstatusJogador from "./pubgApi/index";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [nickname, setNickName] = useState("Tecnosh");
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="main">
+        <div className="background">
+          <div className="container_button">
+            <a href="#consultar" className="button_consultar">
+              CONSULTAR DADOS DE JOGADOR &nbsp;&nbsp;{" "}
+              <ArrowDownIcon className="icons" />{" "}
+            </a>
+          </div>
+        </div>
+        <div className="container_consultar" id="consultar">
+          <div className="container_consultar_jogadores">
+            <input className="input" type="text" maxLength={50} />
+            <button className="button_buscar">
+              Consultar &nbsp;&nbsp; <MagnifyingGlassIcon className="icons" />
+            </button>
+          </div>
+          <div className="container_consultar_jogadores">
+            <EstatusJogador playerName={nickname} />
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

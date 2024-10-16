@@ -1,0 +1,51 @@
+
+
+.titulo_infos{
+    color: #d19c40;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.jogador_clan{
+    display: flex;
+    justify-content: space-between;
+}
+
+.info_jogador{
+    width: 29rem;
+}
+
+.info_clan{
+    width: 29rem;
+}
+
+.info_partidas{
+    width: 100%;
+}
+
+.icons_detalhes{
+    width: 1.8rem;
+    height: auto;
+    color: #d6006f;
+}
+
+.button_vermais{
+    background: none;
+    border: none;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.button_vermais:hover{
+    transform: rotate(360deg);
+    color: white;
+}
+
+.button_vermais:active{
+    transform: scale(1.3);
+}
+
+.text_partida{
+    display: flex;
+    align-items: center;
+}
